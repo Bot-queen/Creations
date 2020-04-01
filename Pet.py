@@ -55,6 +55,6 @@ if __name__ == "__main__":
     pet.age = a
     pet.height = h
     pet.introductions()
-    pet.meow()
+    pet.cat_sound()
   elif s != "dog" or s != "cat":
     print("Pet species unknown...")
