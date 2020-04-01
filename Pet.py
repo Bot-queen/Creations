@@ -1,60 +1,41 @@
 import time
 class Pet:
-  def __init__(self):
-    self.name = ""
-    self.age = ""
-    self.height = ""
-    self.sound = ""
-    self.species = ""
-    
-  def roar(self):
-    time.sleep(0.4)
-    print(self.sound, "!")
-  
-  def introductions(self):
-    time.sleep(0.4)
-    print("Your {}'s name is ".format(self.species), self.name)
+    def introduction(self):
+        print("The name of your pet is", self.name)
+    def roar(self):
+        print(self.sound_type)
 
 class Dog(Pet):
-  def intro(self):
-    self.species = "dog"
-    Pet().introductions()
-  
-  def bark(self):
-    self.sound = "woof"
-    print(self.sound)
-    
+    def bark(self):
+        self.sound_type = "woof"
+        time.sleep(0.4)
+        print(self.sound_type)
+    def introduction(self):
+        time.sleep(0.4)
+        print("Hello, I am", self.name, ". I am a talking dog")
+
 class Cat(Pet):
-  def intro(self):
-    self.species = "cat"
-    Pet().introductions()
-  
-  def cat_sound(self):
-    self.sound = "meow"
-    print(self.sound)
-    
-if __name__ == "__main__":
-  time.sleep(0.2)
-  n = input("Enter pet's name: ")
-  time.sleep(0.2)
-  a = int(input("Enter pet's age: "))
-  time.sleep(0.2)
-  h = float(input("Enter pet's height: "))
-  time.sleep(0.2)
-  s = input("Enter pet's species (cat/dog): ").lower()
-  if s == "dog":
-    pet = Dog()
-    pet.name = n 
-    pet.age = a
-    pet.height = h
-    pet.introductions()
-    pet.bark()
-  elif s == "cat":
-    pet = Cat()
-    pet.name = n 
-    pet.age = a
-    pet.height = h
-    pet.introductions()
-    pet.cat_sound()
-  elif s != "dog" or s != "cat":
-    print("Pet species unknown...")
+    def meow(self):
+        self.sound_type = "meow"
+        time.sleep(0.4)
+        print(self.sound_type)
+    def introduction2(self):
+        time.sleep(0.4)
+        print("Hello, I am", self.name, ". I am a talking cat")
+
+choice = input("Choose a pet (cat/dog): ").lower()
+if choice == "dog":
+    pet1 = Dog()
+    time.sleep(0.2)
+    name1 = input("Enter your dog's name: ")
+    pet1.name = name1
+    pet1.introduction()
+    pet1.bark()
+elif choice == "cat":
+    pet2 = Cat()
+    name2 = input("Enter your cat's name: ")
+    pet2.name = name2
+    pet2.introduction2()
+    pet2.meow()
+else:
+    print("Invalid response.")
