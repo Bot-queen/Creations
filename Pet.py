@@ -22,7 +22,7 @@ class Dog(Pet):
   
   def bark(self):
     self.sound = "woof"
-    Pet().roar()
+    print(self.sound)
     
 class Cat(Pet):
   def intro(self):
@@ -31,7 +31,7 @@ class Cat(Pet):
   
   def cat_sound(self):
     self.sound = "meow"
-    Pet().roar()
+    print(self.sound)
     
 if __name__ == "__main__":
   time.sleep(0.2)
