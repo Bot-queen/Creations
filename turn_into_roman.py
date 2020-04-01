@@ -1,3 +1,5 @@
+import time
+
 def int_to_roman(num):
     numerical = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1] 
     romans = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"] 
@@ -11,4 +13,5 @@ def int_to_roman(num):
 
 while True:
     n = int(input("Enter number: "))
+    time.sleep(0.4)
     print("Roman form is, ", int_to_roman(n))
