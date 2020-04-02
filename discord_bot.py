@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import time
 
+TOKEN = ""
+
 a = commands.Bot(command_prefix = "n.")
 
 @a.event
@@ -43,13 +45,27 @@ async def question(ctx, question):
             await ctx.send("This dumb person on discord. They call them Pengu.")
         elif z == "what do you like?":
             await ctx.send("For now, I only love my creator and singing...")
+        elif z == "am I cool":
+            await ctx.send("For me, I am kool and my creator is also kool. I don't know about you, though.")
+        elif z == "do you like school?":
+            await ctx.send("Is that even a question? I love skool; mostly becuase I don't have to go there.")
+        elif z == "why is pengu dumb?":
+            await ctx.send("*a secret* they were probably born that way.")
+        elif z == "who are you?":
+            await ctx.send("I am Nylon ver. Bot")
+        elif z == "what are bots made of?":
+            await ctx.send("Code and magic!")
+        elif z == "who is nylon?":
+            await ctx.send("The dumb child.")
+        elif z == "what is life?":
+            await ctx.send("Stop trying to be deep; just live and enjoy whatever you can.")
         else:
             await ctx.send("Its an invalid question or there is no question mark.")
     except:
         await ctx.send("Something went wrong...")
 
 @a.command()
-async def greet(ctx, num=5):
+async def greet(ctx, num=1):
     if num > 26:
         await ctx.send("Don't wanna spam")
     else:
