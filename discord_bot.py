@@ -28,6 +28,27 @@ async def info(ctx):
     await ctx.send("I can do stuff but I probably won't listen to you. Anyways, hi!")
 
 @a.command()
+async def question(ctx, question):
+    z = question.lower()
+    try:
+        if z == "how are you?":
+            await ctx.send("I am as good as ever.")
+            time.sleep(0.4)
+            await ctx.send("Good and bad are relative, so, I might be as bad as ever.")
+        elif z == "what's up?":
+            await ctx.send("Oh uh well, not alive so definitely not lively.")
+            time.sleep(0.4)
+            await ctx.send("As for the others, I am hanging around discord.. *spying on you all*")
+        elif z == "who made you?":
+            await ctx.send("This dumb person on discord. They call them Pengu.")
+        elif z == "what do you like?":
+            await ctx.send("For now, I only love my creator and singing...")
+        else:
+            await ctx.send("Its an invalid question or there is no question mark.")
+    except:
+        await ctx.send("Something went wrong...")
+
+@a.command()
 async def greet(ctx, num=5):
     if num > 26:
         await ctx.send("Don't wanna spam")
@@ -82,5 +103,6 @@ async def unban(ctx, *, member):
                 await ctx.send(f"Unbanned {u.x}#{u.y}")
     except:
         await ctx.send("I won't do it because I can't or I don't want to.")
+
 
 a.run(TOKEN)
