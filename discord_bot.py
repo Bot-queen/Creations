@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import time
 
-TOKEN = ""
+token = ""
 
 a = commands.Bot(command_prefix = "n.")
 
@@ -21,7 +21,8 @@ async def on_user_leave(member):
 
 @a.event
 async def command_error(ctx, error):
-    await ctx.send("Do it right, idiot!")
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Do it right, idiot!")
 
 @a.command()
 async def info(ctx):
@@ -45,7 +46,7 @@ async def question(ctx, question):
             await ctx.send("This dumb person on discord. They call them Pengu.")
         elif z == "what do you like?":
             await ctx.send("For now, I only love my creator and singing...")
-        elif z == "am I cool":
+        elif z == "am i cool?":
             await ctx.send("For me, I am kool and my creator is also kool. I don't know about you, though.")
         elif z == "do you like school?":
             await ctx.send("Is that even a question? I love skool; mostly becuase I don't have to go there.")
@@ -121,4 +122,4 @@ async def unban(ctx, *, member):
         await ctx.send("I won't do it because I can't or I don't want to.")
 
 
-a.run(TOKEN)
+a.run(token)
