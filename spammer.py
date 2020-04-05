@@ -2,9 +2,9 @@ import smtplib
 import imghdr
 from email.message import EmailMessage
 
-email = "aovil420@gmail.com"
+email = ""
 password = ""
-receiver = "aovil420@gmail.com"
+receiver = ""
 
 msg = EmailMessage()
 msg["Subject"] = "Chin Chin"
